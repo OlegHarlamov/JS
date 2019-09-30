@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+		<script>
+			var c = 'green';
+			var a = 'src2.jpg';
+			function f (){
+				document.getElementById('t').style.color=c;
+				c=='green'?c='red':c='green';
+				setTimeout('f()', 1000);
+				
+			
+				document.getElementById('y').src=a;
+				a=='src1.jpg'?a='src2.jpg':a='src1.jpg';
+			}
+		</script>
+</head>
+<body onload="f()">
+	<h1>
+	<span id="t">Определенный текст</span>
+	</h1>
+	<img id="y" src="src1.jpg" width="300" height="300">
+</body>
+</html>

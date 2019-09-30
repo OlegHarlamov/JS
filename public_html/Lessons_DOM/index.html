@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+		.red{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<h1 id="header">Заголовок</h1>
+
+	<p class='article'>Text article 1</p>
+	<p class='article'>Text article 2</p>
+	<p class='article'>Text article 3</p>
+	<p class='article'>Text article 4</p>
+	<p class='article'>Text article 5</p>
+
+	<div> Блок кода
+		<div>Вложенный элемент</div>
+	</div>
+
+	<ul id="list">
+		<li>0</li>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+
+	<script>
+		//Вставка дочернего элемента
+
+		var list = document.getElementById("list");
+		var newItem = document.createElement("li"); //<li></li>
+		newItem.innerText = "Созданный элемент";
+		list.insertBefore(newItem,list.children[0]);
+
+		//Выведем все дочерние элементы тэга body
+		for(var i=0;i<document.body.childNodes.length;i++){
+			console.log(document.body.childNodes[i]);
+		}
+
+		//Изменяем свойства тэга
+		var h1 = document.getElementById("header");
+		h1.innerText="Новый заголовок!";
+		h1.style.fontSize='60px';
+		h1.className='red';
+
+		//Работа с группой классов
+		var article = document.getElementsByClassName("article");
+
+		for(var i=0,size=16;i<article.length;i++,size+=10){
+			article[i].classList.add('red');
+			article[i].style.fontWeight='bold';
+			article[i].style.fontSize=size+'px';
+		}
+
+		var elText = document.createTextNode("Новый элемент");
+		document.body.appendChild(elText);
+	</script>
+</body>
+</html>

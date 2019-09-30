@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Game</title>
+</head>
+<body>
+	<script>
+		var car = {
+			marka: 'Audi',
+			model: 'A6',
+			year:2017,
+			engineStarted:false
+		}
+		console.log(car);
+		car.color='black';
+		car.year=2016;
+		console.log(car);
+
+		car.start = startEngine;
+		function startEngine(){
+			if(!this.engineStarted){
+				this.engineStarted=true;
+				console.log("engine started!!!");
+			}
+		}
+		car.start();
+
+	</script>
+</body>
+</html>
